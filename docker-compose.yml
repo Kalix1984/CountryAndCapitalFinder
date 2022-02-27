@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  webapp:
+    container_name: webapp
+    restart: always
+    build: ./webapp/
+    ports:
+      - 8080:8080
+
+  rest:
+    container_name: rest
+    restart: always
+    build: ./rest/
+    ports:
+      - 3000:3000
+         
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+#    ports:
+#      - 27017  
+
+#  mongo-express:
+#    container_name: mongo-express
+#    image: mongo-express
+#    restart: always
+#    ports:
+#      - 8081:8081
+#    environment:
+#      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
